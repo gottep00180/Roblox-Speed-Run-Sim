@@ -144,11 +144,7 @@ while wait() do
         local target_part = game:GetService("Workspace").GameAssets.GlobalAssets.OrbSpawns.Ring
         firetouchinterest(plr.Character.Head,target_part, 0)
     end
-    if getgenv().rebirth == true then
-        local Event = game:GetService("ReplicatedStorage").Remotes.Rebirth
-        Event:FireServer()
-        wait(5)
-    end
+
     if getgenv().event == true then
         local plr = game.Players.LocalPlayer
         local target_part = game:GetService("Workspace").GameAssets.GlobalAssets.EventAssets.Summer.Collectibles.Collectible
@@ -162,9 +158,15 @@ while wait() do
         local A_1 = "EggSix"
         local A_2 = false
         local Event = game:GetService("ReplicatedStorage").Remotes.CanBuyEgg
-        Event:InvokeServer(A_1, A_2)
+
     end
-    
 end
 
 
+while wait(10) do
+    if getgenv().rebirth == true then
+        local Event = game:GetService("ReplicatedStorage").Remotes.Rebirth
+        Event:FireServer()
+    end
+
+end
