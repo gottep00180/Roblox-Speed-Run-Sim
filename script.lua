@@ -147,6 +147,7 @@ while wait() do
     if getgenv().rebirth == true then
         local Event = game:GetService("ReplicatedStorage").Remotes.Rebirth
         Event:FireServer()
+        wait(5)
     end
     if getgenv().event == true then
         local plr = game.Players.LocalPlayer
